@@ -13,7 +13,5 @@ module.exports.EnvConfig = {
 };
 
 
-
-
 module.exports.AppName = "HustleHawk";
 module.exports.AppLogo = "img/redHawk_scaled.jpg";
