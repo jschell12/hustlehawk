@@ -1,7 +1,7 @@
 module.exports.sessionSecret = "lap0gEZ71S6Vc2eIYQCVf9xY09C8p36K";
 
 module.exports.Mongo = {
-	uri: "mongodb://localhost/jobs",
+	uri: "mongodb://127.0.0.1/jobs",
 	options: {
         db: { safe: true },
         user: "jobs-web",
