@@ -1,12 +1,12 @@
 {
-  "name": "Jobs",
+  "name": "HustleHawk",
   "description": "",
   "version": "0.1.0",
   "homepage": "",
   "author": {
     "name": "Josh Schell",
-    "email": "hello@jobberjab.com",
-    "url": "www.jobberjab.com"
+    "email": "hello@hustlehawk.com",
+    "url": "www.hustlehawk.schellster.com"
   },
   "repository": {
     "type": "git",
