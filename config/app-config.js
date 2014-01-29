@@ -9,7 +9,7 @@ module.exports.Mongo = {
 	}
 };
 module.exports.EnvConfig = {
-	port: 4321
+	port: 4000
 };
 
 
