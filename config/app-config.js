@@ -10,7 +10,7 @@ module.exports.Mongo = {
 };
 module.exports.EnvConfig = {
 	port: 4000
-};
+}; 
 
 
 module.exports.AppName = "HustleHawk";
