@@ -6,3 +6,4 @@ module.exports = {
 	LINKEDIN_OAUTH_USER_SECRET:"2b8d6a33-d903-4a23-b57b-990b10186f8c",
 	LINKEDIN_CALLBACK_URL : "http://hustlehawk-beta.schellster.com/auth/linkedin/callback"
 };
+ 
