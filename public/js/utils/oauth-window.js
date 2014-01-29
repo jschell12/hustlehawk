@@ -13,15 +13,9 @@
       self.oauth_window = window.open(self.authenticateUrl, 'oauthWindow', self.windowParams);
       self.checkConnect = setInterval(function() {
       	if(self.oauth_window.location){
-          // HACK
-          try{
-            if(self.oauth_window.location.host){
-              self.oauth_window.close();
-            }
-          }catch(ex){
+          if(self.oauth_window.location.host){
             self.oauth_window.close();
           }
-          // KCAH
         }
         if (!self.oauth_window || !self.oauth_window.closed) return;
         clearInterval(self.checkConnect);
