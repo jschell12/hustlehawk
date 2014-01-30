@@ -12,7 +12,7 @@ module.exports = {
 		LINKEDIN_SECRET_KEY:"v9dOKXxpMlE6wneU",
 		LINKEDIN_OAUTH_USER_TOKEN:"5b05c273-8953-4d10-9b77-b21bdca024ca",
 		LINKEDIN_OAUTH_USER_SECRET:"1f1a6fc9-10aa-4e4d-8ac2-bc38443482d2",
-		LINKEDIN_CALLBACK_URL : "http://hustlehawk-beta.schellster.com/auth/linkedin/callback"
+		LINKEDIN_CALLBACK_URL : "http://hustlehawk.schellster.com/auth/linkedin/callback"
 	}
 };
  
