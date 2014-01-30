@@ -10,8 +10,8 @@ module.exports = {
 	development: { 
 		LINKEDIN_API_KEY:"75h1j17lpqt2xj",
 		LINKEDIN_SECRET_KEY:"v9dOKXxpMlE6wneU",
-		LINKEDIN_OAUTH_USER_TOKEN:"ea1eb42b-5fac-4f90-9c7d-e6e8e7b0d77f",
-		LINKEDIN_OAUTH_USER_SECRET:"2b8d6a33-d903-4a23-b57b-990b10186f8c",
+		LINKEDIN_OAUTH_USER_TOKEN:"5b05c273-8953-4d10-9b77-b21bdca024ca",
+		LINKEDIN_OAUTH_USER_SECRET:"1f1a6fc9-10aa-4e4d-8ac2-bc38443482d2",
 		LINKEDIN_CALLBACK_URL : "http://hustlehawk-beta.schellster.com/auth/linkedin/callback"
 	}
 };
