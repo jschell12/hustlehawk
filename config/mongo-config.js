@@ -12,7 +12,7 @@ module.exports = {
 		uri: "mongodb://localhost/jobs",
 		options: {
 	        db: { safe: true },
-	        user: "jobs-web",
+	        user: "jobs",
 	        pass: "6yhhJ8DdU25yr1X2Xki67f7JDINxd7q5"		
 		}
 	}
