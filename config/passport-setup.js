@@ -83,6 +83,7 @@ module.exports = function(mongodb, oauthConfig){
             if(err) throw err;
 
             // Now create an OauthIdentity Record 
+            console.log(profile);
             var skills = _flattenSkills(profile._json.skills.values);
             var newOauthIdentity = new mongodb.OauthIdentity({
               userId: newUser._id,
