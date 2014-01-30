@@ -29,39 +29,37 @@
 
 <script id="user-profile-tmpl"  type="text/x-kendo-template" >
   <div class="row app-padding-bottom">
-    <div class="col-md-12">
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <div class="col-md-12">
-            <div class="page-header">
-              <h2>Industry</h2>
-            </div>
-            <p data-bind="source: user.industry"></p>
-            <div class="page-header">
-              <h2>Summary</h2>
-            </div>
-            <p data-bind="source: user.summary"></p>
-            <div class="page-header">
-              <h2>Interests</h2>
-            </div>
-            <p data-bind="source: user.interests"></p>
-           <div class="page-header">
-              <h2>Skillz</h2>
-            </div>
-            <p>(Select which skills you want <b>CareersHawk</b> to focus on.)</p>
-            <div class=" btn-group btn-grid skills-list" data-toggle="buttons">
-            </div>
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <div class="col-md-12">
+          <div class="page-header">
+            <h2>Industry</h2>
+          </div>
+          <p data-bind="source: user.industry"></p>
+          <div class="page-header">
+            <h2>Summary</h2>
+          </div>
+          <p data-bind="source: user.summary"></p>
+          <div class="page-header">
+            <h2>Interests</h2>
+          </div>
+          <p data-bind="source: user.interests"></p>
+         <div class="page-header">
+            <h2>Skillz</h2>
+          </div>
+          <p>(Select which skills you want <b>CareersHawk</b> to focus on.)</p>
+          <div class=" btn-group btn-grid skills-list" data-toggle="buttons">
           </div>
         </div>
-        <hr />
-        <br />
-        <div class="form-group">
-          <div class="col-md-12">
-            <button type="button" class="btn btn-info" data-bind="click:save">Save</button>
-          </div>
+      </div>
+      <hr />
+      <br />
+      <div class="form-group">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-info" data-bind="click:save">Save</button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
 </script>
 
