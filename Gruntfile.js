@@ -32,6 +32,8 @@ module.exports = function(grunt) {
       },
       lib_js: {
         src: [
+          'public/lib/bootstrap/js/transition.js',
+          'public/lib/bootstrap/js/collapse.js',
           'public/lib/bootstrap/js/modal.js',
           'public/lib/bootstrap/js/dropdown.js',
           'public/lib/bootstrap/js/button.js',
