@@ -1,3 +1,9 @@
+// Gather outside arguments if passed. Set default to 'localhost', otherwise.
+// Environments
+//   localhost
+//   development
+//   production   
+
 // Module dependencies
 var express = require('express'),
     expressApp = module.exports = express(),
@@ -8,14 +14,18 @@ var express = require('express'),
     passport = require('passport'),
     argv = require('optimist').argv;
 
+var appEnv =  argv.env  || "localhost";
 
 
 
 // Include configs
-var mongodb = require('./config/mongo-config'),
-    oauthConfig = require('./config/oauth-config'),
+
+var mongodbSetup = require('./config/mongo-setup')
+    mongodbConfig = require('./config/mongo-config')[appEnv],
+    oauthConfig = require('./config/oauth-config')[appEnv],
     passportSetup = require('./config/passport-setup'),
-    appConfig = require('./config/app-config');
+    appConfig = require('./config/app-config')[appEnv],
+    commonConfig = require('./config/common-config');
 
 // Include routes
 var siteRoute = require('./routes/site'),
@@ -32,8 +42,6 @@ var linkUp = require("./components/linkupapi");
 var simplyHired = require("./components/simplyhiredapi");    
 
 
-// Gather outside arguments if passed. Set default to 'development', otherwise.
-process.env.NODE_ENV =  "development";
 
 
 // Configure Express
@@ -78,24 +86,22 @@ expressApp.configure(function(){
 
 /*********************************************************************/
 // Configure environment
-
-
 expressApp.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
 
 /*********************************************************************/
 // Setup MongoDB
-mongodb(appConfig.Mongo);
+mongodbSetup(mongodbConfig);
 
 /*********************************************************************/
 // Setup Passport
-passportSetup(mongodb, oauthConfig);
+passportSetup(mongodbSetup, oauthConfig);
 
 
 /*********************************************************************/
 // Run server
 var server = expressApp.listen(process.env.port || appConfig.EnvConfig.port);
-console.log("Express server listening on port %d in %s mode", server.address().port, process.env.NODE_ENV);
+console.log("Express server listening on port %d in %s mode", server.address().port, appEnv);
 
 
 
@@ -116,13 +122,13 @@ var serverContext = {
         passport: passport,
     },
     data: {
-        mongodb: mongodb
+        mongodb: mongodbSetup
     },
     expressApp: expressApp,
     lib: {
     },
-    appName: appConfig.AppName,    
-    appLogo: appConfig.AppLogo
+    appName: commonConfig.AppName,    
+    appLogo: commonConfig.AppLogo
 };
 
 // Setup routes
