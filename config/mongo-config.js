@@ -1,7 +1,7 @@
 
 module.exports = {
 	localhost:{
-		uri: "mongodb://127.0.0.1/jobs",
+		uri: "mongodb://localhost/jobs",
 		options: {
 	        db: { safe: true },
 	        user: "jobs-web",
@@ -9,7 +9,7 @@ module.exports = {
 		}
 	},
 	development: {
-		uri: "mongodb://127.0.0.1/jobs",
+		uri: "mongodb://localhost/jobs",
 		options: {
 	        db: { safe: true },
 	        user: "jobs-web",
