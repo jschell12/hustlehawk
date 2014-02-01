@@ -6785,7 +6785,7 @@ img.app-logo {
   height: 53px;
 }
 img.app-user-avatar {
-  margin: -20px -15px -18px 0;
+  margin: -20px 0px -18px 5px;
   width: 52px;
   height: 52px;
 }

@@ -1,6 +1,6 @@
 
 <script id="user-loggedin-dropdown-tmpl" type="text/x-kendo-template">
-  <ul class="nav navbar-nav navbar-left">
+  <ul class="nav navbar-nav navbar-right">
     <li class="dropdown user-loggedin">     
       <a  class="btn  pull-left nav-linkedin dropdown-toggle" data-toggle="dropdown" href="#">
         <i class="fa fa-chevron-circle-down"></i>
@@ -17,7 +17,7 @@
 </script>
 
 <script id="user-loggedout-dropdown-tmpl" type="text/x-kendo-template">
- <ul class="nav navbar-nav navbar-left">
+ <ul class="nav navbar-nav navbar-right">
     <li class="dropdown user-login">
        <a  data-bind="click:authenticateWithLinkedIn"  class="btn nav-linkedin pull-left "  href="#">
         <b> <i class="fa fa-linkedin-square"></i> Login w/ LinkedIn</b>
@@ -131,7 +131,7 @@
  </li>
 </script>  
 <script id="nav-layout-tmpl" type="text/x-kendo-template"> 
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <div class="collapse navbar-collapse">
     <div id="user">
     </div>
   </div>
