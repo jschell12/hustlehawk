@@ -6785,7 +6785,7 @@ img.app-logo {
   height: 53px;
 }
 img.app-user-avatar {
-  margin: -20px 0px -18px 0;
+  margin: -20px -15px -18px 0;
   width: 52px;
   height: 52px;
 }
@@ -6846,7 +6846,7 @@ img.app-user-avatar {
   padding-right: 10px;
 }
 .btn.nav-linkedin {
-  padding: 15px 0 15px 15px;
+  padding: 15px 15px 15px 15px;
   margin-right: -1px;
   font-size: 14px;
 }

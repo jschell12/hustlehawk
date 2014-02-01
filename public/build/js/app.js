@@ -380,21 +380,6 @@ var app = app || {};
 	});
 
 
-
-	// app.ContactViewModel = new kendo.observable({
-		
-	// });
-
-	// app.ContactView = new kendo.View("user-profile-tmpl", {
-	// 	model:app.ContactViewModel,
-	// 	init: function(){
-	// 		var self = this;
-	// 	},
-	// 	show: function(){
-	// 	}
-	// });
-
-
 	// Router
 	app.Router = new kendo.Router({
 		init: function() {
@@ -537,8 +522,10 @@ var app = app || {};
 	app.UserViewModel = new kendo.observable({
 		user: null,
 		authenticateWithLinkedIn: function(){
-			var linkedinOauthWindow = new app.Utils.OauthWindow("/auth/linkedin", 500);	
-			linkedinOauthWindow.open();					
+			// var linkedinOauthWindow = new app.Utils.OauthWindow("/auth/linkedin", 500);	
+			// linkedinOauthWindow.open();
+
+			window.location.href = "/auth/linkedin/";
 		},
 		isLoggedIn: function(){
 			var user = this.get("user");
