@@ -120,6 +120,7 @@ var app = app || {};
 	app.JobFeedViewModel = new kendo.observable({
 		jobs:[],
 		keywords: "",
+		location: "",
 		userIsLoggedIn: function(){
 			return app.UserViewModel.isLoggedIn();
 		},
@@ -131,8 +132,7 @@ var app = app || {};
 			var jfvm = app.JobFeedViewModel;
 			jfvm.set("jobs", []);	
 			var keywords = this.get("keywords");
-			var location = _getCurrentLocation();
-			app.JobFeedViewModel.set("location", location);
+			var location = this.get("location");
 
 			if(location){
 				app.IndeedDataSource.read({ keywords: keywords, location:location});
@@ -182,6 +182,9 @@ var app = app || {};
 	// Routes
 	app.Router.route("/", function(){			
 		app.AppLayout.showIn("#view", app.JobFeedView);
+
+		var location = _getCurrentLocation();
+		app.JobFeedViewModel.set("location", location);
 		app.JobFeedViewModel.search();
 	});
 
