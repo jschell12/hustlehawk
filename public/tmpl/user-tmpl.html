@@ -1,0 +1,76 @@
+
+<script id="user-loggedin-dropdown-tmpl" type="text/x-kendo-template">
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown user-loggedin">     
+      <a  class="btn  pull-left nav-linkedin dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-chevron-circle-down"></i>
+        <span class="ellipsis app-user-name" data-bind="text:user.name"></span>
+        <img class="app-user-avatar" data-bind="attr:{src:user.picture}"></img>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/#/profile">Profile</a></li>
+        <li class="divider"></li>
+        <li><a class="action-logout" href="/logout">Log out</a></li>
+      </ul>
+    </li>           
+  </ul> 
+</script>
+
+<script id="user-loggedout-dropdown-tmpl" type="text/x-kendo-template">
+ <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown user-login">
+       <a  data-bind="click:authenticateWithLinkedIn"  class="btn nav-linkedin pull-left "  href="#">
+        <b> <i class="fa fa-linkedin-square"></i> Login w/ LinkedIn</b>
+      </a>
+    </li>           
+  </ul> 
+</script>
+
+
+<script id="user-profile-tmpl"  type="text/x-kendo-template" >
+  <div class="row app-padding-bottom">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <div class="col-md-12">
+          <div class="page-header">
+            <h2>Industry</h2>
+          </div>
+          <p data-bind="source: user.industry"></p>
+          <div class="page-header">
+            <h2>Summary</h2>
+          </div>
+          <p data-bind="source: user.summary"></p>
+          <div class="page-header">
+            <h2>Interests</h2>
+          </div>
+          <p data-bind="source: user.interests"></p>
+         <div class="page-header">
+            <h2>Skillz</h2>
+          </div>
+          <p>(Select which skills you want <b>CareersHawk</b> to focus on.)</p>
+          <div class=" btn-group btn-grid skills-list" data-toggle="buttons">
+          </div>
+        </div>
+      </div>
+      <hr />
+      <br />
+      <div class="form-group">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-info" data-bind="click:save">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</script>
+
+<script type="text/x-kendo-tmpl" id="skills-list-template"> 
+    # if (toggled) { #
+      <label class="btn btn-danger skill-toggle active" data-id="#:id#" >    
+        <input type="checkbox">  #:name#
+      </label>
+    #} else {#
+      <label class="btn btn-danger skill-toggle"  data-id="#:id#" >    
+        <input  type="checkbox">  #:name#
+      </label>
+    #}#
+</script>

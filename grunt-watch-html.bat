@@ -1,0 +1,1 @@
+grunt watch:concat_html

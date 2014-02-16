@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block head %}
+  {% parent %}
+{% endblock %}
+{% block content %}
+  <div class="app-main">
+    <div  class="container">
+      <div class="row app-content">   
+        <div class="page-header">
+			<h1>About <b>{{appName}}</b></h1>
+		</div>
+		<p class="lead"><b>{{appName}}</b> is a simple tool to browse jobs served by multiple <a href="/credits">job apis</a>.</p>
+		<p class="lead">Login with your <a href="http://linkin.com">LinkedIn account</a> and <b>{{appName}}</b> will 
+			help you find jobs based on information found in your Linkedin profile.</p>
+      </div>
+    </div>
+  </div>  
+{% endblock %}
+<!-- Source -->
+{% block scripts %}
+  {% parent %}
+{% endblock %}

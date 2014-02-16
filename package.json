@@ -1,0 +1,63 @@
+{
+  "name": "HustleHawk",
+  "description": "",
+  "version": "0.1.0",
+  "homepage": "",
+  "author": {
+    "name": "Josh Schell",
+    "email": "hello@hustlehawk.com",
+    "url": "www.hustlehawk.schellster.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": ""
+    }
+  ],
+  "main": "./server",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.1.0",
+    "mongoose": "~3.6.8",
+    "future": "~2.3.1",
+    "node-dev": "~2.0.1",
+    "consolidate": "~0.9.1",
+    "swig": "~0.14.0",
+    "join": "~2.3.1",
+    "optimist": "~0.6.0",
+    "bcrypt-nodejs": "0.0.3",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "passport-linkedin-oauth2": ">=1.1.1",
+    "xml2js": "~0.2.8",
+    "moment": "~2.2.1",
+    "request": "~2.27.0",
+    "url": "~0.7.9",
+    "validator": "~3.2.0",
+    "mandrill-api": "~1.0.37",
+    "mailer": "~0.6.7"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "grunt-contrib-concat": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt": "~0.4.1",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "node-dev": "~2.0.1",
+    "grunt-contrib-less": "~0.7.0"
+  }
+}
