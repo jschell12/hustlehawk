@@ -13,13 +13,13 @@ var express = require('express'),
     Schema = mongoose.Schema,
     passport = require('passport'),
     argv = require('optimist').argv;
-
+console.log(argv);
 var appEnv =  argv.env  || "localhost";
 
 
 
 // Include configs
-
+console.log("APP ENVIRONMENT: ", appEnv);
 var mongodbSetup = require('./config/mongo-setup')
     mongodbConfig = require('./config/mongo-config')[appEnv],
     secrets = require('./config/secrets')[appEnv],
