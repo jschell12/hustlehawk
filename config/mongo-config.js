@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 /***
  * NOTE: You will have to set up your own users on your mongodb instance
  ********************************************************************************/
+=======
+
+>>>>>>> e82feb2262864c479beb1b2f51141ba39299742f
 module.exports = {
 	localhost:{
 		uri: "mongodb://localhost/jobs",
