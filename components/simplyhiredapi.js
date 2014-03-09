@@ -18,6 +18,10 @@ exports.search = function(keywords, location, cb){
 	
     location = location || "";
     keywords = keywords || "";
+    if(keywords === "undefined" || keywords === undefined){ 
+        keywords = "";
+    }
+
     var options = {
         host: 'http://api.simplyhired.com/a/jobs-api/xml-v2/ws-25/mi-25/l-' + location + '/q-' + keywords + '/?pshid=&ssty=&cflg=&jbd=&clip='
     };

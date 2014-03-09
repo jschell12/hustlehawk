@@ -22,7 +22,7 @@ var appEnv =  argv.env  || "localhost";
 
 var mongodbSetup = require('./config/mongo-setup')
     mongodbConfig = require('./config/mongo-config')[appEnv],
-    oauthConfig = require('./config/oauth-config')[appEnv],
+    secrets = require('./config/secrets')[appEnv],
     passportSetup = require('./config/passport-setup'),
     appConfig = require('./config/app-config')[appEnv],
     commonConfig = require('./config/common-config');
@@ -35,10 +35,10 @@ var siteRoute = require('./routes/site'),
     geoApiRoute = require('./routes/geoApi');
 
 // Initialize other        
-var indeed = require("./components/indeedapi");
-var careerBuilder = require("./components/careerbuilderapi"); 
+var indeed = require("./components/indeedapi")(secrets.indeed);
+var careerBuilder = require("./components/careerbuilderapi")(secrets.careerbuilder); 
 var careerJet = require("./components/careerjetapi");    
-var linkUp = require("./components/linkupapi");
+var linkUp = require("./components/linkupapi")(secrets.linkup);
 var simplyHired = require("./components/simplyhiredapi");    
 
 
@@ -95,7 +95,7 @@ mongodbSetup(mongodbConfig);
 
 /*********************************************************************/
 // Setup Passport
-passportSetup(mongodbSetup, oauthConfig);
+passportSetup(mongodbSetup, secrets.linkedin);
 
 
 /*********************************************************************/
