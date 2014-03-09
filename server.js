@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Gather outside arguments if passed. Set default to 'localhost', otherwise.
 // Environments
 //   localhost
