@@ -11,8 +11,7 @@ exports.search = function(keywords, location, cb){
 	var xml2js = require('xml2js');
     var moment = require('moment');
     var url = require("url");
-	var utils = require("./utility");
-	
+    var utils = require("./utility");
     var options = {
         host:'http://public.api.careerjet.net/search?locale_code=en_US&location=' + location + '&keywords=' + keywords
     };

@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-=======
 
-
-exports.createFacets = function(jobs){
-    return facets;
-}	
-
->>>>>>> e82feb2262864c479beb1b2f51141ba39299742f
 exports.size = function(obj) {
     var size = 0, key;
     for (key in obj) {
