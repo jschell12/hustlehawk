@@ -101,7 +101,7 @@ passportSetup(mongodbSetup, secrets.linkedin);
 /*********************************************************************/
 // Run server
 var server = expressApp.listen(process.env.port || appConfig.EnvConfig.port);
-console.log("Express server listening on port %d in %s mode", server.address().port, appEnv);
+console.log("Express server listening on port %d in %s mode", process.env.port || appConfig.EnvConfig.port, appEnv);
 
 
 
