@@ -13,8 +13,7 @@ var express = require('express'),
     Schema = mongoose.Schema,
     passport = require('passport'),
     argv = require('optimist').argv;
-console.log(argv);
-var appEnv =  argv.env  || "localhost";
+var appEnv =  argv.ENV  || "localhost";
 
 
 
@@ -101,7 +100,7 @@ passportSetup(mongodbSetup, secrets.linkedin);
 /*********************************************************************/
 // Run server
 var server = expressApp.listen(process.env.port || appConfig.EnvConfig.port);
-console.log("Express server listening on port %d in %s mode", process.env.port || appConfig.EnvConfig.port, appEnv);
+console.log("Express server listening on port %d in %s mode", server.address().port, appEnv);
 
 
 
