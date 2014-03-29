@@ -97,7 +97,7 @@ mongodbSetup(mongodbConfig);
 // Setup Passport
 passportSetup(mongodbSetup, secrets.linkedin);
 
-
+  
 /*********************************************************************/
 // Run server
 var server = expressApp.listen(process.env.port || appConfig.EnvConfig.port);
