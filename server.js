@@ -27,7 +27,7 @@ var mongodbSetup = require('./config/mongo-setup')
 
 
 console.log("APP ENVIRONMENT: ", appEnv);
-console.log("APP SECRETS: ", secrets);
+console.log("APP SECRETS: ", secrets); 
 
 // Include routes
 var siteRoute = require('./routes/site'),
