@@ -1,5 +1,5 @@
  
-    // Gather outside arguments if passed. Set default to 'localhost', otherwise.
+// Gather outside arguments if passed. Set default to 'localhost', otherwise.
 // Environments
 //   localhost
 //   development
