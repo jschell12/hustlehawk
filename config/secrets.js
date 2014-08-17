@@ -18,7 +18,7 @@ module.exports = {
                         apiKey : "370055E1B925D46C9D52904CCD41F4B2",
                         searchKey: "4299F0BBB53C01F7B644FA1CA040C860"
                 },
-                simplyhired: {}  
+                simplyhired: {}   
         },
         development: {
                 linkedin: {
