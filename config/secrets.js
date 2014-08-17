@@ -23,7 +23,7 @@ module.exports = {
         development: {
                 linkedin: {
                         LINKEDIN_API_KEY: "7590eir6timkeg",
-                        LINKEDIN_SECRET_KEY: "QwHBhlBuR43Brjy1", 
+                        LINKEDIN_SECRET_KEY: "QwHBhlBuR43Brjy1",  
                         LINKEDIN_CALLBACK_URL : "http://hustlehawk.schellster.com/auth/linkedin/callback"
                 },
                 careerbuilder: {
