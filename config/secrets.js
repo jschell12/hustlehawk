@@ -8,7 +8,7 @@ module.exports = {
                         LINKEDIN_SECRET_KEY: "iudRSTlu1rTUzGqK",
                         LINKEDIN_CALLBACK_URL : "http://localhost:4000/auth/linkedin/callback"  
                 },
-                careerbuilder: {
+                careerbuilder: { 
                         developerKey : "WDX954Z6FCN5X40YZLHQ"
                 },
                 careerjet: {},
