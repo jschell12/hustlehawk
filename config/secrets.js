@@ -1,5 +1,5 @@
 // App Secrets for accessing Linkedin and Job APIs
-module.exports = {
+module.exports = { 
         test:{},
         localhost: {
                 linkedin: {
