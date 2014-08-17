@@ -35,7 +35,7 @@ console.log("APP SECRETS: ", secrets);
 var siteRoute = require('./routes/site'),
     authRoute = require('./routes/auth'),
     userApiRoute = require('./routes/userApi'),
-    jobApiRoute = require('./routes/jobApi'),       
+    jobApiRoute = require('./routes/jobApi'),
     geoApiRoute = require('./routes/geoApi');
 
 // Initialize other        
