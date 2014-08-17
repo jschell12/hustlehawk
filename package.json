@@ -34,7 +34,7 @@
     "future": "~2.3.1",
     "node-dev": "~2.0.1",
     "consolidate": "~0.9.1",
-    "swig": "~0.14.0",
+    "swig": "1.0.0",
     "join": "~2.3.1",
     "optimist": "~0.6.0",
     "bcrypt-nodejs": "0.0.3",
