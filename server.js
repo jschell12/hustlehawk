@@ -13,21 +13,21 @@ var express = require('express'),
     Schema = mongoose.Schema,
     passport = require('passport'),
     argv = require('optimist').argv;
-var appEnv =  argv.ENV  || "localhost";
+var appEnv = argv.ENV || "localhost";
 
 
 
 // Include configs
 var mongodbSetup = require('./config/mongo-setup')
-    mongodbConfig = require('./config/mongo-config')[appEnv],
-    secrets = require('./config/secrets')[appEnv],
-    passportSetup = require('./config/passport-setup'),
-    appConfig = require('./config/app-config')[appEnv],
-    commonConfig = require('./config/common-config');
+mongodbConfig = require('./config/mongo-config')[appEnv],
+secrets = require('./config/secrets')[appEnv],
+passportSetup = require('./config/passport-setup'),
+appConfig = require('./config/app-config')[appEnv],
+commonConfig = require('./config/common-config');
 
 
 console.log("APP ENVIRONMENT: ", appEnv);
-console.log("APP SECRETS: ", secrets); 
+console.log("APP SECRETS: ", secrets);
 
 // Include routes
 var siteRoute = require('./routes/site'),
@@ -38,40 +38,41 @@ var siteRoute = require('./routes/site'),
 
 // Initialize other        
 var indeed = require("./components/indeedapi")(secrets.indeed);
-var careerBuilder = require("./components/careerbuilderapi")(secrets.careerbuilder); 
-var careerJet = require("./components/careerjetapi");    
+var careerBuilder = require("./components/careerbuilderapi")(secrets.careerbuilder);
+var careerJet = require("./components/careerjetapi");
 var linkUp = require("./components/linkupapi")(secrets.linkup);
-var simplyHired = require("./components/simplyhiredapi");    
-
+var simplyHired = require("./components/simplyhiredapi");
 
 
 
 // Configure Express
-expressApp.configure(function(){
+expressApp.configure(function() {
     "use strict";
     expressApp.use(express.compress());
-    expressApp.engine('.html', cons.swig);
-    swig.init({
-        root: __dirname +  '/views',
-        cache: false,
-        allowErrors: true // allows errors to be thrown and caught by express instead of suppressed by Swig
-    });
+    expressApp.engine('html', swig.renderFile);
+
     expressApp.set('view engine', '.html');
-    expressApp.set('view options', { pretty: true })
+    expressApp.set('view options', {
+        pretty: true
+    });
+    expressApp.set('views', __dirname + '/views');
     expressApp.use(express.favicon("public/img/redHawk_scaled.jpg"));
+    expressApp.set('view cache', false);
     expressApp.use(express.logger('dev'));
     expressApp.use(express.bodyParser());
     expressApp.use(express.methodOverride());
     expressApp.use(express.cookieParser());
-    expressApp.use(express.session({ secret: appConfig.sessionSecret}));
+    expressApp.use(express.session({
+        secret: appConfig.sessionSecret
+    }));
     // Remember Me middleware
-    expressApp.use( function (req, res, next) {
-        if ( req.method == 'POST' /* && req.url == '/login' */ ) {
-          if ( req.body.rememberme ) {
-            req.session.cookie.maxAge = 2592000000; // 30*24*60*60*1000 Rememeber 'me' for 30 days
-          } else {
-            req.session.cookie.expires = false;
-          }
+    expressApp.use(function(req, res, next) {
+        if (req.method == 'POST' /* && req.url == '/login' */ ) {
+            if (req.body.rememberme) {
+                req.session.cookie.maxAge = 2592000000; // 30*24*60*60*1000 Rememeber 'me' for 30 days
+            } else {
+                req.session.cookie.expires = false;
+            }
         }
         next();
     });
@@ -82,13 +83,18 @@ expressApp.configure(function(){
     expressApp.use(express.csrf());
 
     var oneDay = 86400000;
-    expressApp.use(express.static(__dirname + '/public', { maxAge: oneDay }));
+    expressApp.use(express.static(__dirname + '/public', {
+        maxAge: oneDay
+    }));
 });
 
 
 /*********************************************************************/
 // Configure environment
-expressApp.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+expressApp.use(express.errorHandler({
+    dumpExceptions: true,
+    showStack: true
+}));
 
 
 /*********************************************************************/
@@ -99,7 +105,7 @@ mongodbSetup(mongodbConfig);
 // Setup Passport
 passportSetup(mongodbSetup, secrets.linkedin);
 
-  
+
 /*********************************************************************/
 // Run server
 var server = expressApp.listen(process.env.port || appConfig.EnvConfig.port);
@@ -112,12 +118,12 @@ console.log("Express server listening on port %d in %s mode", server.address().p
 // TODO: may need to break this up in future if it becomes too large
 
 var serverContext = {
-    api:{
-        indeed : indeed,  
-        careerBuilder : careerBuilder, 
-        careerJet : careerJet,    
-        linkUp : linkUp,
-        simplyHired : simplyHired
+    api: {
+        indeed: indeed,
+        careerBuilder: careerBuilder,
+        careerJet: careerJet,
+        linkUp: linkUp,
+        simplyHired: simplyHired
     },
     auth: {
         passportUtils: passportSetup,
@@ -127,9 +133,8 @@ var serverContext = {
         mongodb: mongodbSetup
     },
     expressApp: expressApp,
-    lib: {
-    },
-    appName: commonConfig.AppName,    
+    lib: {},
+    appName: commonConfig.AppName,
     appLogo: commonConfig.AppLogo
 };
 
