@@ -34,7 +34,7 @@ console.log("APP SECRETS: ", secrets);
 // Include routes
 var siteRoute = require('./routes/site'),
     authRoute = require('./routes/auth'),
-    userApiRoute = require('./routes/userApi'),
+    userApiRoute = require('./routes/userApi'), 
     jobApiRoute = require('./routes/jobApi'),      
     geoApiRoute = require('./routes/geoApi');
 
