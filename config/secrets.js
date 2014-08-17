@@ -21,7 +21,7 @@ module.exports = {
                 simplyhired: {}
         },
         development: {
-                linkedin: {
+                linkedin: { 
                         LINKEDIN_API_KEY: "7590eir6timkeg",
                         LINKEDIN_SECRET_KEY: "QwHBhlBuR43Brjy1",
                         LINKEDIN_CALLBACK_URL : "http://localhost:4000/auth/linkedin/callback"
