@@ -1,4 +1,3 @@
 /node_modules
 /.gitignore
 .gitignore
-/config/secrets.js
