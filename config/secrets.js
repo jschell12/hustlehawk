@@ -38,5 +38,5 @@ module.exports = {
                         searchKey: "4299F0BBB53C01F7B644FA1CA040C860"
                 },
                 simplyhired: {}
-        }  
+        }   
 };
