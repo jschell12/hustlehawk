@@ -1,2 +1,2 @@
 .gitignore merge=ours
-config/secrets.js
+config/secrets merge=ours
